@@ -3,7 +3,7 @@ import pygame
 pygame.init()
 
 SCREEN_WIDTH = 1800
-SCREEN_HEIGHT = 1800
+SCREEN_HEIGHT = 900
 
 screen =pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -29,17 +29,17 @@ while run:
     if key[pygame.K_s]:
         player1.move_ip(0, 2)
 
-    if player1.left < 10:
-        player1.left = 1780
+    if player1.left < 0:
+        player1.left = 1799
 
-    if player1.right > 1790:
-        player1.right = 20
+    if player1.left > 1800:
+        player1.left = 0
 
     if player1.top < 0:
-        player1.top = 1780
+        player1.top = 899
 
-    if player1.bottom > 1800:
-        player1.bottom = 20
+    if player1.top > 900:
+        player1.top = 0
 
 
     if key[pygame.K_UP]:
@@ -52,16 +52,16 @@ while run:
         player2.move_ip(1, 0)
 
     if player2.left < 0:
-        player2.left = 1780
+        player2.left = 1799
 
-    if player2.right > 1800:
-        player2.right = 20
+    if player2.left > 1800:
+        player2.left = 0
 
     if player2.top < 0:
-        player2.top = 1780
+        player2.top = 899
 
-    if player2.bottom > 1800:
-        player2.bottom = 20
+    if player2.top > 900:
+        player2.top = 0
 
 
     if player1.colliderect(player2):
